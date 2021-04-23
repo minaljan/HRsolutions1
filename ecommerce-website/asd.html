@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <!-- Box icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.cs" />
+
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title> Ecommerce Website</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css"> 
+
+  <style>
+    .menu-btn {
+        
+        color: #243a6f;
+        padding: 0;
+        font-style: none;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+    }
+    
+    .dropdown-menu {
+        position: relative;
+        display: block;
+        font-size: 10px;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        background-color: #243a6f;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .links {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+    }
+
+    
+
+    .menu-btn:hover {
+        
+        cursor: pointer;
+    }
+	#slider-text{
+    padding-top: 40px;
+    display: block;
+  }
+  #slider-text .col-md-6{
+    overflow: hidden;
+  }
+  
+  #slider-text h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin: 30px auto;
+    padding-left: 40px;
+  }
+  #slider-text h2::after{
+    border-top: 2px solid #c7c7c7;
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    }
+  
+  #itemslider h4{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 10px auto 3px;
+  }
+  #itemslider h5{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 3px auto 2px;
+  }
+  #itemslider h6{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;;
+    font-size: 10px;
+    margin: 2px auto 5px;
+  }
+  .badge {
+    background: #b20c0c;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 31px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    border: 2px solid #FFF;
+    box-shadow: 0 0 0 1px #b20c0c;
+    top: 5px;
+    right: 25%;
+  }
+  #slider-control img{
+    padding-top: 60%;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 992px){
+  #slider-control img {
+    padding-top: 70px;
+    margin: 0 auto;
+  }
+  }
+  
+  .carousel-showmanymoveone .carousel-control {
+    width: 4%;
+    background-image: none;
+  }
+  .carousel-showmanymoveone .carousel-control.left {
+    margin-left: 5px;
+  }
+  .carousel-showmanymoveone .carousel-control.right {
+    margin-right: 5px;
+  }
+  .carousel-showmanymoveone .cloneditem-1,
+  .carousel-showmanymoveone .cloneditem-2,
+  .carousel-showmanymoveone .cloneditem-3,
+  .carousel-showmanymoveone .cloneditem-4,
+  .carousel-showmanymoveone .cloneditem-5 {
+    display: none;
+  }
+  @media all and (min-width: 768px) {
+    .carousel-showmanymoveone .carousel-inner > .active.left,
+    .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -50%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .active.right,
+    .carousel-showmanymoveone .carousel-inner > .next {
+      left: 50%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .left,
+    .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+    .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(50%, 0, 0);
+      transform: translate3d(50%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+  @media all and (min-width: 992px) {
+    .carousel-showmanymoveone .carousel-inner > .active.left,
+    .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -16.666%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .active.right,
+    .carousel-showmanymoveone .carousel-inner > .next {
+      left: 16.666%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .left,
+    .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+    .carousel-showmanymoveone .carousel-inner .cloneditem-3,
+    .carousel-showmanymoveone .carousel-inner .cloneditem-4,
+    .carousel-showmanymoveone .carousel-inner .cloneditem-5,
+    .carousel-showmanymoveone .carousel-inner .cloneditem-6  {
+      display: block;
+    }
+  }
+  @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+    .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(16.666%, 0, 0);
+      transform: translate3d(16.666%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-16.666%, 0, 0);
+      transform: translate3d(-16.666%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+  .container-fluid{
+      margin-top: 50px;
+  }
+</style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="home" class="header">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="navigation container">
+        <div class="logo">
+          <h1>E-Shoper</h1>
+        </div>
+
+        <div class="menu">
+          <div class="top-nav">
+            <div class="logo">
+              <h1>E-Shoper</h1>
+            </div>
+            <div class="close">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link scroll-link">Home</a>
+            </li>
+            <li class="nav-item"><a href="shops.html" class="nav-link">Shops</a>
+            </li>
+            <li class="nav-item">
+              <a href="product.html" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="#account" class="nav-link scroll-link">Account</a>
+            </li>
+            <li class="nav-item">
+              <a href="home.html" class="nav-link ">Log Out</a>
+            </li>
+            <li class="nav-item">
+              <a class="menu-btn">More<i class="bx bx-caret-down"></i></a>
+                      <div class="menu-content">
+                          <a class="links" href="contact.html">Contact Us</a>
+                          <a class="links" href="Address.html">Address</a>
+                          <a class="links" href="#">About Us</a>
+                      </div>
+            </li>
+          
+
+
+            <li class="nav-item">
+              <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="cart.html" class="cart-icon">
+          <i class="bx bx-shopping-bag"></i>
+        </a>
+
+        <div class="hamburger">
+          <i class="bx bx-menu"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <img src="./images/banner.png" alt="" class="hero-img" />
+
+    <div class="hero-content">
+      <h2><span class="discount">70% </span> SALE OFF</h2>
+      <h1>
+        <span>Summer Vibes</span>
+        <span>mode on</span>
+      </h1>
+      <a class="btn" href="#">shop now</a>
+    </div>
+   
+  </header>
+			
+	<!-- Latest compiled and minified CSS -->
+<!-- https://xstore.8theme.com/demos/hosting/-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+ 
+ 
+
+
+
+<!-- Item slider-->
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1539840093138-9b3e230e5206?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=765a2eb222b1851840a4a157780fb487&auto=format&fit=crop&w=1534&q=80" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAYORAL SUKNJA</h4>
+              <h5 class="text-center">200,00 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1524010349062-860def6649c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e725946a3f177dce83a705d4b12019c2&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAYORAL KOŠULJA</h4>
+              <h5 class="text-center">800 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04aebe9a22884efa1a5f61e434215597&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <span class="badge">10%</span>
+              <h4 class="text-center">PANTALONE TERI 2</h4>
+              <h5 class="text-center">4000,00 TK</h5>
+              <h6 class="text-center">5000,00 TK</h6>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1531925470851-1b5896b67dcd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=91fe0ca1b5d72338a8aac04935b52148&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">CVETNA HALJINA</h4>
+              <h5 class="text-center">4000,00 RSD</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=74065eec3c2f6a8284bbe30402432f1d&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAJICA FOTO</h4>
+              <h5 class="text-center">40,00 TK</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="#"><img src="https://images.unsplash.com/photo-1532086853747-99450c17fa2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61a42a11f627b0d21d0df757d9b8fe23&auto=format&fit=crop&w=500&q=60" class="img-responsive center-block"></a>
+              <h4 class="text-center">MAJICA MAYORAL</h4>
+              <h5 class="text-center">100,00 TK</h5>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="slider-control">
+        <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png" alt="Left" class="img-responsive"></a>
+        <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right" class="img-responsive"></a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Item slider end-->
+
+  <!-- Main -->
+  <main>
+    <section class="advert section">
+      <div class="advert-center container">
+        <div class="advert-box">
+          <div class="dotted">
+            <div class="content">
+              <h2>
+                Girls <br />
+                Clothing
+              </h2>
+              <h4>Worlds Best Brands</h4>
+            </div>
+          </div>
+          <img src="./images/advert1.png" alt="">
+        </div>
+
+        <div class="advert-box">
+          <div class="dotted">
+            <div class="content">
+              <h2>
+                Summer <br />
+                Clothing
+              </h2>
+              <h4>Worlds Best Brands</h4>
+            </div>
+          </div>
+          <img src="./images/advert2.png" alt="">
+        </div>
+
+        <div class="advert-box">
+          <div class="dotted">
+            <div class="content">
+              <h2>
+                Boys <br />
+                Clothing
+              </h2>
+              <h4>Worlds Best Brands</h4>
+            </div>
+          </div>
+          <img src="./images/advert3.png" alt="">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured -->
+    <section class="section featured">
+      <div class="title">
+        <h1>Featured Products</h1>
+      </div>
+
+      <div class="product-center container">
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic2.jpg" alt="">
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="product-details.html">
+              <h3>Boy’s T-Shirt</h3>
+            </a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic1.jpg" alt="">
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic3.jpg" alt="">
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic4.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <!--Latest -->
+    <section class="section featured">
+      <div class="title">
+        <h1>Latest Products</h1>
+      </div>
+
+      <div class="product-center container">
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic5.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic2.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic1.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic4.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic1.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic3.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic2.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-header">
+            <img src="./images/pic5.jpg" alt="">
+
+            <ul class="icons">
+              <span><i class="bx bx-heart"></i></span>
+              <span><i class="bx bx-shopping-bag"></i></span>
+              <span><i class="bx bx-search"></i></span>
+            </ul>
+          </div>
+          <div class="product-footer">
+            <a href="#"><h3>Boy’s T-Shirt</h3></a>
+            <div class="rating">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+            <h4 class="price">$50</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Banner -->
+    <section class="section">
+      <div class="product-banner">
+        <div class="left">
+          <img src="./images/test.jpg" alt="" />
+        </div>
+        <div class="right">
+          <div class="content">
+            <h2><span class="discount">70% </span> SALE OFF</h2>
+            <h1>
+              <span>Collect Your</span>
+              <span>Kids Collection</span>
+            </h1>
+            <a class="btn" href="#">shop now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="testimonial-center container">
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis,
+            fugiat labore. Veritatis et omnis consequatur.
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./images/profile1.jpg" alt="" />
+          </div>
+          <h4>Will Smith</h4>
+        </div>
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis,
+            fugiat labore. Veritatis et omnis consequatur.
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./images/profile2.jpg" alt="" />
+          </div>
+          <h4>Will Smith</h4>
+        </div>
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis,
+            fugiat labore. Veritatis et omnis consequatur.
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./images/profile3.jpg" alt="" />
+          </div>
+          <h4>Will Smith</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="section">
+      <div class="brands-center container">
+        <div class="brand">
+          <img src="./images/brand1.png" alt="" />
+        </div>
+        <div class="brand">
+          <img src="./images/brand2.png" alt="" />
+        </div>
+        <div class="brand">
+          <img src="./images/brand1.png" alt="" />
+        </div>
+        <div class="brand">
+          <img src="./images/brand2.png" alt="" />
+        </div>
+        <div class="brand">
+          <img src="./images/brand1.png" alt="" />
+        </div>
+        <div class="brand">
+          <img src="./images/brand2.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-center">
+          <h3>Company Location</h3>
+          <a><iframe width="114" height="93" id="gmap_canvas" src="https://maps.google.com/maps?q=roha%20raigad&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+        frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe></a>	
+        </div>
+        <div class="footer-center">
+          <h3>EXTRAS</h3>
+          <a href="#">Brands</a>
+          <a href="#">Gift Certificates</a>
+          <a href="#">Affiliate</a>
+          <a href="#">Specials</a>
+          <a href="#">Site Map</a>
+        </div>
+        <div class="footer-center">
+          <h3>INFORMATION</h3>
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Site Map</a>
+        </div>
+        <div class="footer-center">
+          <h3>MY ACCOUNT</h3>
+          <a href="#">My Account</a>
+          <a href="#">Order History</a>
+          <a href="#">Wish List</a>
+          <a href="#">Newsletter</a>
+          <a href="#">Returns</a>
+        </div>
+        
+          
+      </div>
+    </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <!-- Custom Script -->
+  <script src="./js/index.js"></script>
+  <script>
+    let dropdownBtn = document.querySelector('.menu-btn');
+    let menuContent = document.querySelector('.menu-content');
+    dropdownBtn.addEventListener('click', () => {
+        if (menuContent.style.display === "") {
+            menuContent.style.display = "block";
+        } else {
+            menuContent.style.display = "";
+        }
+    })
+	$(document).ready(function(){
+
+$('#itemslider').carousel({ interval: 3000 });
+
+$('.carousel-showmanymoveone .item').each(function(){
+var itemToClone = $(this);
+
+for (var i=1;i<6;i++) {
+itemToClone = itemToClone.next();
+
+if (!itemToClone.length) {
+itemToClone = $(this).siblings(':first');
+}
+
+itemToClone.children(':first-child').clone()
+.addClass("cloneditem-"+(i))
+.appendTo($(this));
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        body{
+            background: url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-johannes-plenio-1103970.jpg&fm=jpg) no-repeat;
+            background-size: cover;
+        }
+        .login_form{
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%) ;
+            position: absolute;
+            color: #000;
+        }
+        .login_form h1{
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .login_form p{
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            margin-left: 0;
+            margin-bottom: 30px;
+            margin-top: 50px;
+
+        }
+        .question p{
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+        .login_form input{
+            font-size: 16px;
+            width: 100%;
+            padding: 15px 10px;
+            border: 0;
+            outline: none;
+            border-radius: 5px;
+        }
+        .login_form button{
+            color: #000;
+            
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px 15px;
+            width: 50%;
+            border: none;
+            border-radius: 5px;
+            margin-left: 95px;
+            margin-top: 50px;
+        }
+        .login_form button:hover{
+            
+            cursor: pointer;
+        }
+        .wrapper{
+            width: 440px;
+            height: 600px;
+            color: #fff;
+            top: 49%;
+            left: 50%;
+            padding: 60px 30px;
+            position: absolute;
+            transform:translate(-50%,-50%) ;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 8px 8px 50px #000;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper"></div>
+        <div class="login_form">
+            <h1>Login</h1>
+            <form action="login.php" method="POST">
+                <p>User Name</p>
+                <input type="text" name="email" placeholder=" User Name">
+                <p>password :</p>
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">Log in</button>
+                <div class="question">
+                    <p>Don't Have an Account? &nbsp; <a href="sign up.html" class="text-center font-weight-bold">sign Up</a></p>
+                </div>
+                    
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
